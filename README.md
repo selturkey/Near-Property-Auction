@@ -11,22 +11,22 @@ To run this project locally:
 
 1. Prerequisites: Make sure you've installed [Node.js] ≥ 12
 1. Clone this repo:
-
+```
       git clone https://github.com/selturkey/Near-Property-Listing-Demo.git
-
+```
 2. Run command on terminal:
-
+```
       yarn install
-
+```
 3. Build Smart Contract:
-
+```
       yarn build:contract
-
+```
 3. Deploy the Contract to Near Testnet:
-
+```
       yarn dev:deploy:contract
 
-
+```
 Now you'll have a contract deployed to Near Testnet!
 
 
@@ -37,6 +37,7 @@ Exploring The Code
 
 1. The "backend" code lives in the `/contract` folder. See the README there for
    more info.
+   
    ### File Stracture
    
 ```
@@ -44,20 +45,25 @@ contract
 │   README.md
 │   package.json
 |   compile.js
-|       
+|   ...
 │
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
+└───assembly 
+│   │   index.ts
+│   │   model.ts
+|   |   utils.ts
+|   |   ...
 │   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
+│   └───_tests_
+│       │   main.spec.ts
+│       │   as-pect.d.ts
 │       │   ...
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└───build
+    │   
+    │___release
+        |
+        |   property_listing.wasm
+
 ```
 
 
