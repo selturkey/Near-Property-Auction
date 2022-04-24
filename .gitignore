@@ -2,9 +2,7 @@
 # Developer note: near.gitignore will be renamed to .gitignore upon project creation
 # dependencies
 
-/assembly/build
-/assembly/_tests_
-/assembly/node_modules
+
 /node_modules
 /.pnp
 .pnp.js
@@ -13,6 +11,9 @@
 /out
 /dist
 /src
+/contract/assembly/build
+/contract/assembly/_tests_
+/contract/assembly/node_modules
 
 # keys
 /neardev
