@@ -40,7 +40,7 @@ Exploring The Stracture
 
 1. The "backend" code lives in the `/contract` folder.
 
-   ### Folder File Stracture
+   ### Folder and File Stracture
    
 ```
 contract
@@ -174,12 +174,43 @@ Step 2: How to Use Functions
    ![buy](/screenshot/buy.png)
 
 
-Step 2: models.ts Where Collections and Asserts and Property Class Functions
+Step 2: models.ts Functions and Property Class
 ---------------------------------
+### Property Class Paramater Type
+<br>
+
+| Parameter        | Type           | 
+| ------------- |:-------------:|
+| id    | u32 | 
+| location      | string      |  
+| propertyName | string     |   
+| bedRooms | u8 |
+| bathRooms | u8 |
+| sqm | u32 |
+| forSale | string |
+| price | `Money` |
+| owner | string |
+<br>
+### Property Class Functions
+<br>
+
+| Functions        | ToDo |          
+| ------------- |:-------------| 
+| addProperty()    | Create add new property to collections sqm and price can not be zero.|
+| getProperties() | Get All strored properties|  
+| getPropertiesOffset()    |Get Partial of stored properties      |   
+| getPropertiesForSale()  |Get Only properties For Sale     | 
+| getPropertyById()      | Get property By Id      | 
+| updatePropertyByid()   |Update property details By Id      | 
+| deletePropertyById()   |Delete property By Id from collections check owner of property before delete  |
+| deleteOwnerAllProperties() |Delete account owner all belonging properties from collections|
+| deleteAllProperties()   |Delete All properties from collections  |
+| buyProperty()   |Buying Property For Sale and Transfer the amount of property for owner.  | 
 
 
 
 
+[Thank you For Patika](https://www.patika.dev/tr) Near Boot Camp
 
 
 
@@ -187,14 +218,13 @@ Step 2: models.ts Where Collections and Asserts and Property Class Functions
 Troubleshooting
 ===============
 
-On Windows, if you're seeing an error containing `EPERM` it may be related to spaces in your path. Please see [this issue](https://github.com/zkat/npx/issues/209) for more details.
+More information pleasae visit as below:
 
 
-  [React]: https://reactjs.org/
+  
   [create-near-app]: https://github.com/near/create-near-app
   [Node.js]: https://nodejs.org/en/download/package-manager/
-  [jest]: https://jestjs.io/
   [NEAR accounts]: https://docs.near.org/docs/concepts/account
   [NEAR Wallet]: https://wallet.testnet.near.org/
   [near-cli]: https://github.com/near/near-cli
-  [gh-pages]: https://github.com/tschaub/gh-pages
+  

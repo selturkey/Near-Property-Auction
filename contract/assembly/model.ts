@@ -28,7 +28,7 @@ export class Property {
   sqm: u32;
   forSale:string;
   price: Money;
-  owner: string;
+  owner: string;  
   
 
   constructor(location:string, propertyName: string, bedRooms:u8, bathRooms:u8, sqm:u8, forSale:string, price:Money ) {   
