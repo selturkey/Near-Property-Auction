@@ -13,6 +13,8 @@ const random =new RNG<u32>(100,1000);
 export const properties = new PersistentUnorderedMap<u32, Property>("properties");
 
 export const propertyIds = new PersistentSet<u32>("propertyIds");
+
+// Use storage to keep accountId
 storage.set<AccountId>("accountId", context.sender);
 
 

@@ -1,7 +1,7 @@
 Demo-Near-Property-Listing
 ==================
 
-This smart contract was initialized with [create-near-app]
+This smart contract was initialized with [create-near-app] template code with assemblyscript.
 
 
 Quick Start
@@ -10,6 +10,12 @@ Quick Start
 To run this project locally:
 
 1. Prerequisites: Make sure you've installed [Node.js] ≥ 12
+   * `npm`
+   * Current version of `Node.js`
+   * `yarn` to install:  `npm install --global yarn` (or just npm i -g yarn)
+   * Install near-cli on terminal :  `npm install --global near-cli`
+   * `near --version` check version and installation done
+
 1. Clone this repo:
 ```
       git clone https://github.com/selturkey/Near-Property-Listing-Demo.git
@@ -22,23 +28,19 @@ To run this project locally:
 ```
       yarn build:contract
 ```
-3. Deploy the Contract to Near Testnet:
+3. Deploy the Contract to the live Near Testnet:
 ```
       yarn dev:deploy:contract
-
 ```
-Now you'll have a contract deployed to Near Testnet!
+Now you deployed the smart contract to the live Near Testnet.
 
 
-
-
-Exploring The Code
+Exploring The Stracture
 ==================
 
-1. The "backend" code lives in the `/contract` folder. See the README there for
-   more info.
-   
-   ### File Stracture
+1. The "backend" code lives in the `/contract` folder.
+
+   ### Folder File Stracture
    
 ```
 contract
@@ -68,36 +70,74 @@ contract
 
 
 
-Deploy
+Exploring The Code and How to Use
 ======
 
-Every smart contract in NEAR has its [own associated account][NEAR accounts]. When you run `yarn dev`, your smart contract gets deployed to the live NEAR TestNet with a throwaway account. When you're ready to make it permanent, here's how.
+After you deploy the contract near create folder `neardev` and under the folder `dev-account` file where we can find the contrat name (contract ID) look like dev-1650691637401-19400424941921
 
+1. Define CONTRACT Variable from terminal bash Linux :
+```
+      export CONTRACT=dev-1650691637401-19400424941921 
+```
+2. Define CONTRACT on terminal powershell Windows:
+```
+      $CONTRACT='dev-1650691637401-19400424941921'
+```
+3. Login your test wallet account using NEAR-CLI from terminal:
+```
+      near login
+```
+3. Call contract methods with your --accountId using NEAR-CLI from terminal:
+```
+      near call $CONTRACT getAll  --accountId <YOUR_ACCOUNT_ID>.testnet
+```
+4. View contract methods with your --accountId using NEAR-CLI from terminal:
+```
+      near view $CONTRACT getAll --accountId <YOUR_ACCOUNT_ID>.testnet
+```
 
-Step 0: Install near-cli (optional)
+Step 1: index.ts Functions CONTRACT Methods
 -------------------------------------
 
-[near-cli] is a command line interface (CLI) for interacting with the NEAR blockchain. It was installed to the local `node_modules` folder when you ran `yarn install`, but for best ergonomics you may want to install it globally:
+| Functions        | ToDo |          
+| ------------- |-------------:| 
+| create()    | Create add new property to collections |
+| getAll() | List All strored properties|  
+| getOffset()    |List Partial of stored properties      |   
+| getForSale()   |List Only properties For Sale     | 
+| getById()      |List property By Id      | 
+| updateById()   |Update property details By Id      | 
+| deleteById()   |Delete property By Id from collections  |
+| deleteOwnerAll()   |Delete account owner all belonging properties from collections  |
+| deleteAll()   |Delete All properties from collections  |
+| buy()   |Buying Property For Sale and Transfer the amount of property for owner.  | 
 
-    yarn install --global near-cli
-
-Or, if you'd rather use the locally-installed version, you can prefix all `near` commands with `npx`
-
-Ensure that it's installed with `near --version` (or `npx near --version`)
 
 
-Step 1: Create an account for the contract
+
+Step 2: How to Use Functions
 ------------------------------------------
 
-Each account on NEAR can have at most one contract deployed to it. If you've already created an account such as `your-name.testnet`, you can deploy your contract to `Near-Property-Auction.your-name.testnet`. Assuming you've already created an account on [NEAR Wallet], here's how to create `Near-Property-Auction.your-name.testnet`:
-
-1. Authorize NEAR CLI, following the commands it gives you:
-
+1. Call create() function to add new property to collections :
+```
+near call $CONTRACT create '{"propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"850000" }' --accountId sel.testnet
+```
+2. Define CONTRACT on terminal powershell Windows:
+```
+      $CONTRACT='dev-1650691637401-19400424941921'
+```
+3. Login your test wallet account using NEAR-CLI from terminal:
+```
       near login
-
-2. Create a subaccount (replace `YOUR-NAME` below with your actual account name):
-
-      near create-account Near-Property-Auction.YOUR-NAME.testnet --masterAccount YOUR-NAME.testnet
+```
+3. Call contract methods with your --accountId using NEAR-CLI from terminal:
+```
+      near call $CONTRACT getAll  --accountId <YOUR_ACCOUNT_ID>.testnet
+```
+4. View contract methods with your --accountId using NEAR-CLI from terminal:
+```
+      near view $CONTRACT getAll --accountId <YOUR_ACCOUNT_ID>.testnet
+```
 
 
 Step 2: set contract name in code
