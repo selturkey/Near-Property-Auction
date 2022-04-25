@@ -191,7 +191,9 @@ Step 2: models.ts Functions and Property Class
 | price | `Money` |
 | owner | string |
 <br>
+
 ### Property Class Functions
+
 <br>
 
 | Functions        | ToDo |          
