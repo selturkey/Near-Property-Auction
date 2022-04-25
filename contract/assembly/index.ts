@@ -8,7 +8,7 @@ import { Money } from "./utils";
 
 // Call Create function to add new property.
 // USE TERMINAL 
-// near call $CONTRACT create '{"propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"850000" }' --accountId sel.testnet
+// near call $CONTRACT create '{"propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"850000","location":"istanbul" }' --accountId sel.testnet
 
 export function create(location:string, propertyName: string, bedRooms:u8, bathRooms:u8, sqm:u8, forSale:string, price:Money): Property {
   
@@ -103,7 +103,7 @@ export function deleteAll (): void {
 
 // Call => deleteAll function to clear all mapped property collections 
 // USE TERMINAL 
-// near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
+// near call $CONTRACT buy '{"id":679066103,"buyingPrice":"1076350983109236599999874"}' --accountId bereket.testnet
 
 export function buy (id:u32, buyingPrice:Money) : Property {
 

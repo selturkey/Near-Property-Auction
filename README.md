@@ -1,6 +1,10 @@
 Demo-Near-Property-Listing
 ==================
 
+
+[![Property Listings](/screenshot/Loom.png)](https://loom.com/share/acec63177b074cad81e13da5f5f32b34)
+
+
 This smart contract was initialized with [create-near-app] template code with assemblyscript.
 
 This demo property listing project is a solution for the real estate market where the owner, buyer and broker deal buy and sell properties in trust, fast and clear for owners and buyers or brokers. It brings more trust and more efficient, easy way to transfer assets. Today, most sales has problems such as who is the real owner of property and what is the real price for sale and who is the real buyer not so transparent, so many sales are cancelation because of these issues of losing trust and losing time or paying more. This decentralized app will help us to be transparent about property buying and selling sytem with blockchain technology at Near Blockchain.Future improvements will be the front end of the dApp such as web and mobile apps and government regulations and DAO to implement.
