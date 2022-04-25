@@ -18,7 +18,7 @@ export function create(location:string, propertyName: string, bedRooms:u8, bathR
 
 // Call => getAll Function to view properties collection
 // USE TERMINAL 
-// near call $CONTRACT getAll '{}' --accountId sel.testnet
+// near call $CONTRACT getAll --accountId sel.testnet --amount 3 --gas=75000000000000
 
 
 export function getAll(): Property[] {
@@ -29,7 +29,7 @@ export function getAll(): Property[] {
 
 // Call => getOffset Function to list part of properties collection
 // USE TERMINAL 
-// near call $CONTRACT getOffset '{"offset":0, "limit": 1}' --accountId sel.testnet
+// near call $CONTRACT getOffset '{"offset":0, "limit": 1}' --accountId sel.testnet --amount 3 --gas=75000000000000
 
 
 export function getOffset(offset:u32, limit:u32): Property[] {
@@ -40,7 +40,8 @@ export function getOffset(offset:u32, limit:u32): Property[] {
 
 // Call => getForSale function to view property details by forSale.
 // USE TERMINAL 
-// near call $CONTRACT getForSale '{}' --accountId sel.testnet
+// near call $CONTRACT getForSale --accountId sel.testnet --amount 3 --gas=75000000000000
+
 
 export function getForSale(): Property[] {
   
@@ -61,7 +62,8 @@ export function getById(id:u32): Property {
 
 // Call => updateById function to view property details by id. Price and sqm must be bigger than 0 and required.
 // USE TERMINAL 
-// near call $CONTRACT updateById '{"id":1824338945,"update":{"forSale":true,"price":"1","sqm":125}}' --accountId sel.testnet
+// near call $CONTRACT updateById '{"id":4049594502,"update":{"price":"54646465515454654", "location":"London","sqm":145}}' --accountId sel.testnet
+
 
 
 export function updateById(id:u32, update:Property): Property {
@@ -72,7 +74,7 @@ export function updateById(id:u32, update:Property): Property {
 
 // Call => deleteById function to delete property collections only owner of property can delete. 
 // USE TERMINAL 
-// near call $CONTRACT deleteById '{"id":32323262032}' --accountId sel.testnet
+// near call $CONTRACT deleteById '{"id":32323262032}' --accountId sel.testnet --amount 3 --gas=75000000000000
 
 export function deleteById (id:u32): void {
 

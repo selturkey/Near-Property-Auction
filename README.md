@@ -124,45 +124,64 @@ Step 2: How to Use Functions
 ```
    ![CreateFunction](/screenshot/create.png)
 
-2. Call getAll() function to list all properties stored at collections:
+2. Call getAll() function to `list all` properties stored at collections:
 ```
    near call $CONTRACT getAll --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
    ![getAllFunction](/screenshot/getAll.png)
-   
-3. Login your test wallet account using NEAR-CLI from terminal:
+
+3. Call getOffset() use for `partial list` of properties stored at collections:
 ```
-      near login
-```
-3. Call contract methods with your --accountId using NEAR-CLI from terminal:
-```
-      near call $CONTRACT getAll  --accountId <YOUR_ACCOUNT_ID>.testnet
-```
-4. View contract methods with your --accountId using NEAR-CLI from terminal:
-```
-      near view $CONTRACT getAll --accountId <YOUR_ACCOUNT_ID>.testnet
+   near call $CONTRACT getOffset '{"offset":0, "limit": 1}' --accountId sel.testnet
 ```
 
+4. Call getForSale() use for `list only` properties available `for sale` stored at collections:
+```
+   near call $CONTRACT getForSale --accountId sel.testnet --amount 3 --gas=75000000000000
+```
+5. Call getById() get property details by Id key stored at collections:
+```
+   near call $CONTRACT getById '{"id":4049594502 }' --accountId sel.testnet
+```
+   ![getByIdFunction](/screenshot/getById.png)
 
-Step 2: set contract name in code
+6. Call updateById() use for `update of property data` given by id stored at collections:
+```
+   near call $CONTRACT updateById '{"id":4049594502,"update":{"price":"54646465515454654", "location":"London","sqm":145}}' --accountId sel.testnet
+```
+   ![updateById](/screenshot/updateById.png)
+
+7. Call deleteById() `delete property` given by id stored at collections:
+```
+   near call $CONTRACT deleteById '{"id":4049594502}' --accountId sel.testnet --amount 3 --gas=75000000000000
+```
+
+8. Call deleteOwnerAll() use for delete account owner properties stored at collections:
+```
+  near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
+```
+
+9. Call deleteAll() use for delete all properties stored at collections:
+```
+   near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
+```
+
+10. Call buy() use for `buying property` given by id from owner and transfer amount and ownership between owner and new buyer and update property details to store at collections before buying property another account you have to `create buyer account` and `login` that account too for call buy() function in this Example I created bereket.testnet account and login to buy property:
+
+```
+   near call $CONTRACT buy '{"id":4049594502,"buyingPrice":"64646465515454654" }' --accountId bereket.testnet
+```
+   ![buy](/screenshot/buy.png)
+
+
+Step 2: models.ts Where Collections and Asserts and Property Class Functions
 ---------------------------------
 
-Modify the line in `src/config.js` that sets the account name of the contract. Set it to the account id you used above.
-
-    const CONTRACT_NAME = process.env.CONTRACT_NAME || 'Near-Property-Auction.YOUR-NAME.testnet'
 
 
-Step 3: deploy!
----------------
 
-One command:
 
-    yarn deploy
 
-As you can see in `package.json`, this does two things:
-
-1. builds & deploys smart contract to NEAR TestNet
-2. builds & deploys frontend code to GitHub using [gh-pages]. This will only work if the project already has a repository set up on GitHub. Feel free to modify the `deploy` script in `package.json` to deploy elsewhere.
 
 
 Troubleshooting
