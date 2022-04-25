@@ -120,13 +120,16 @@ Step 2: How to Use Functions
 
 1. Call create() function to add new property to collections :
 ```
-near call $CONTRACT create '{"location":"Istanbul","propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"21733580199719106607635056" }' --accountId sel.testnet
-![Create Function Terminal](/screenshot/CreateFunction.png)
+   near call $CONTRACT create '{"location":"Istanbul","propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"21733580199719106607635056" }' --accountId sel.testnet
 ```
-2. Define CONTRACT on terminal powershell Windows:
+   ![CreateFunction](/screenshot/create.png)
+
+2. Call getAll() function to list all properties stored at collections:
 ```
-      $CONTRACT='dev-1650691637401-19400424941921'
+   near call $CONTRACT getAll --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
+   ![getAllFunction](/screenshot/getAll.png)
+   
 3. Login your test wallet account using NEAR-CLI from terminal:
 ```
       near login
