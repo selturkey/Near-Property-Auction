@@ -222,11 +222,13 @@ Troubleshooting
 
 More information pleasae visit as below:
 
+  [create-near-app](https://github.com/near/create-near-app)<br>
 
+  [Node.js](https://nodejs.org/en/download/package-manager/)<br>
+
+  [NEAR accounts](https://docs.near.org/docs/concepts/account)<br>
+
+  [NEAR Wallet](https://wallet.testnet.near.org/)<br>
   
-  [create-near-app]: https://github.com/near/create-near-app
-  [Node.js]: https://nodejs.org/en/download/package-manager/
-  [NEAR accounts]: https://docs.near.org/docs/concepts/account
-  [NEAR Wallet]: https://wallet.testnet.near.org/
-  [near-cli]: https://github.com/near/near-cli
+  [near-cli](https://github.com/near/near-cli)<br>
   
