@@ -89,18 +89,18 @@ After you deploy the contract near create folder `neardev` and under the folder 
 ```
 3. Call contract methods with your --accountId using NEAR-CLI from terminal:
 ```
-      near call $CONTRACT getAll  --accountId <YOUR_ACCOUNT_ID>.testnet
+      near call $CONTRACT <FUNCTION> '{Args}' --accountId <YOUR_ACCOUNT_ID>.testnet
 ```
 4. View contract methods with your --accountId using NEAR-CLI from terminal:
 ```
-      near view $CONTRACT getAll --accountId <YOUR_ACCOUNT_ID>.testnet
+      near view $CONTRACT <FUNCTION> --accountId <YOUR_ACCOUNT_ID>.testnet
 ```
 
 Step 1: index.ts Functions CONTRACT Methods
 -------------------------------------
 
 | Functions        | ToDo |          
-| ------------- |-------------:| 
+| ------------- |:-------------| 
 | create()    | Create add new property to collections |
 | getAll() | List All strored properties|  
 | getOffset()    |List Partial of stored properties      |   
@@ -120,7 +120,8 @@ Step 2: How to Use Functions
 
 1. Call create() function to add new property to collections :
 ```
-near call $CONTRACT create '{"propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"850000" }' --accountId sel.testnet
+near call $CONTRACT create '{"location":"Istanbul","propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"21733580199719106607635056" }' --accountId sel.testnet
+![Create Function Terminal](/screenshot/CreateFunction.png)
 ```
 2. Define CONTRACT on terminal powershell Windows:
 ```
