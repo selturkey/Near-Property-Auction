@@ -7,6 +7,8 @@ Demo-Near-Property-Listing
 
 This smart contract was initialized with [create-near-app] template code with assemblyscript.
 
+## Solution for Real Estate Market
+
 This demo property listing project is a solution for the real estate market where the owner, buyer and broker deal buy and sell properties in trust, fast and clear for owners and buyers or brokers. It brings more trust and more efficient, easy way to transfer assets. Today, most sales has problems such as who is the real owner of property and what is the real price for sale and who is the real buyer not so transparent, so many sales are cancelation because of these issues of losing trust and losing time or paying more. This decentralized app will help us to be transparent about property buying and selling sytem with blockchain technology at Near Blockchain.Future improvements will be the front end of the dApp such as web and mobile apps and government regulations and DAO to implement.
 
 
@@ -26,22 +28,8 @@ To run this project locally:
 ```
       git clone https://github.com/selturkey/Near-Property-Listing-Demo.git
 ```
-2. Run command on terminal:
-```
-      yarn install
-```
-3. Build Smart Contract:
-```
-      yarn build:contract
-```
-3. Deploy the Contract to the live Near Testnet:
-```
-      yarn dev:deploy:contract
-```
-Now you deployed the smart contract to the live Near Testnet.
 
-
-Exploring The Stracture
+Exploring The Stracture of Create-Near-App template   
 ==================
 
 1. The "backend" code lives in the `/contract` folder.
@@ -75,8 +63,18 @@ contract
 ```
 
 
+3. Build Smart Contract:
+```
+      yarn build:contract
+```
+3. Deploy the Contract to the live Near Testnet:
+```
+      yarn dev:deploy:contract
+```
+Now you deployed the smart contract to the live Near Testnet.
 
-Exploring The Code and How to Use
+
+How we can manage the CONTRACT with Functions
 ======
 
 After you deploy the contract near create folder `neardev` and under the folder `dev-account` file where we can find the contrat name (contract ID) look like dev-1650691637401-19400424941921
@@ -126,56 +124,56 @@ Step 2: How to Use Functions
 
 1. Call create() function to add new property to collections :
 ```
-   near call $CONTRACT create '{"location":"Istanbul","propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"21733580199719106607635056" }' --accountId sel.testnet
+near call $CONTRACT create '{"location":"Istanbul","propertyName":"Sel Villa", "bedRooms":3, "bathRooms":2, "sqm":128, "forSale":"true", "price":"21733580199719106607635056" }' --accountId sel.testnet
 ```
    ![CreateFunction](/screenshot/create.png)
 
 2. Call getAll() function to `list all` properties stored at collections:
 ```
-   near call $CONTRACT getAll --accountId sel.testnet --amount 3 --gas=75000000000000
+near call $CONTRACT getAll --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
    ![getAllFunction](/screenshot/getAll.png)
 
 3. Call getOffset() use for `partial list` of properties stored at collections:
 ```
-   near call $CONTRACT getOffset '{"offset":0, "limit": 1}' --accountId sel.testnet
+near call $CONTRACT getOffset '{"offset":0, "limit": 1}' --accountId sel.testnet
 ```
 
 4. Call getForSale() use for `list only` properties available `for sale` stored at collections:
 ```
-   near call $CONTRACT getForSale --accountId sel.testnet --amount 3 --gas=75000000000000
+near call $CONTRACT getForSale --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
 5. Call getById() get property details by Id key stored at collections:
 ```
-   near call $CONTRACT getById '{"id":4049594502 }' --accountId sel.testnet
+near call $CONTRACT getById '{"id":4049594502 }' --accountId sel.testnet
 ```
    ![getByIdFunction](/screenshot/getById.png)
 
 6. Call updateById() use for `update of property data` given by id stored at collections:
 ```
-   near call $CONTRACT updateById '{"id":4049594502,"update":{"price":"54646465515454654", "location":"London","sqm":145}}' --accountId sel.testnet
+near call $CONTRACT updateById '{"id":4049594502,"update":{"price":"54646465515454654", "location":"London","sqm":145}}' --accountId sel.testnet
 ```
    ![updateById](/screenshot/updateById.png)
 
 7. Call deleteById() `delete property` given by id stored at collections:
 ```
-   near call $CONTRACT deleteById '{"id":4049594502}' --accountId sel.testnet --amount 3 --gas=75000000000000
+near call $CONTRACT deleteById '{"id":4049594502}' --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
 
 8. Call deleteOwnerAll() use for delete account owner properties stored at collections:
 ```
-  near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
+near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
 
 9. Call deleteAll() use for delete all properties stored at collections:
 ```
-   near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
+near call $CONTRACT deleteAll  --accountId sel.testnet --amount 3 --gas=75000000000000
 ```
 
 10. Call buy() use for `buying property` given by id from owner and transfer amount and ownership between owner and new buyer and update property details to store at collections before buying property another account you have to `create buyer account` and `login` that account too for call buy() function in this Example I created bereket.testnet account and login to buy property:
 
 ```
-   near call $CONTRACT buy '{"id":4049594502,"buyingPrice":"64646465515454654" }' --accountId bereket.testnet
+near call $CONTRACT buy '{"id":4049594502,"buyingPrice":"64646465515454654" }' --accountId bereket.testnet
 ```
    ![buy](/screenshot/buy.png)
 
