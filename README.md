@@ -81,23 +81,23 @@ After you deploy the contract near create folder `neardev` and under the folder 
 
 1. Define CONTRACT Variable from terminal bash Linux :
 ```
-      export CONTRACT=dev-1650691637401-19400424941921 
+near login 
 ```
 2. Define CONTRACT on terminal powershell Windows:
 ```
-      $CONTRACT='dev-1650691637401-19400424941921'
+export CONTRACT=dev-1650691637401-19400424941921
 ```
 3. Login your test wallet account using NEAR-CLI from terminal:
 ```
-      near login
+$CONTRACT='dev-1650691637401-19400424941921'
 ```
 3. Call contract methods with your --accountId using NEAR-CLI from terminal:
 ```
-      near call $CONTRACT <FUNCTION> '{Args}' --accountId <YOUR_ACCOUNT_ID>.testnet
+near call $CONTRACT <FUNCTION> '{Args}' --accountId <YOUR_ACCOUNT_ID>.testnet
 ```
 4. View contract methods with your --accountId using NEAR-CLI from terminal:
 ```
-      near view $CONTRACT <FUNCTION> --accountId <YOUR_ACCOUNT_ID>.testnet
+near view $CONTRACT <FUNCTION> --accountId <YOUR_ACCOUNT_ID>.testnet
 ```
 
 Step 1: index.ts Functions CONTRACT Methods
