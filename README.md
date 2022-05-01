@@ -79,15 +79,15 @@ How we can manage the CONTRACT with Functions
 
 After you deploy the contract near create folder `neardev` and under the folder `dev-account` file where we can find the contrat name (contract ID) look like dev-1650691637401-19400424941921
 
-1. Define CONTRACT Variable from terminal bash Linux :
+1. Login your test wallet account using NEAR-CLI from terminal:
 ```
 near login 
 ```
-2. Define CONTRACT on terminal powershell Windows:
+2.  Define CONTRACT Variable from terminal bash Linux :
 ```
 export CONTRACT=dev-1650691637401-19400424941921
 ```
-3. Login your test wallet account using NEAR-CLI from terminal:
+3. Define CONTRACT on terminal powershell Windows:
 ```
 $CONTRACT='dev-1650691637401-19400424941921'
 ```
