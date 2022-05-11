@@ -2,7 +2,7 @@ Demo-Near-Property-Listing
 ==================
 
 ## Loom Video Link of Project
-[![Property Listings](/screenshot/Loom.png)](https://loom.com/share/acec63177b074cad81e13da5f5f32b34)
+[![Property Listings](/screenshot/Loom.png)](https://www.loom.com/share/5260eb180ee44afd951ec1ffb5ce3231)
 
 
 This smart contract was initialized with [create-near-app] template code with assemblyscript.
@@ -83,11 +83,11 @@ After you deploy the contract near create folder `neardev` and under the folder 
 ```
 near login 
 ```
-2.  Define CONTRACT Variable from terminal bash Linux :
+2. Define CONTRACT Variable from terminal bash Linux :
 ```
 export CONTRACT=dev-1650691637401-19400424941921
 ```
-3. Define CONTRACT on terminal powershell Windows:
+3.  Define CONTRACT on terminal powershell (WINDOWS):
 ```
 $CONTRACT='dev-1650691637401-19400424941921'
 ```
